@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <ImageView
+        android:id="@+id/img_view"
+        android:layout_width="230dp"
+        android:layout_height="130dp"
+        android:src="@drawable/babyflix"
+        android:layout_marginTop="20dp"
+        android:layout_centerHorizontal="true"
+        android:contentDescription="@string/image"
+         />
+
+    <TextView
+        android:id="@+id/login_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/login_text"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        android:layout_below="@id/img_view"
+        android:layout_marginTop="20dp" />
+
+    <TextView
+        android:id="@+id/email_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/email"
+        android:textSize="13sp"
+        android:layout_marginStart="17dp"
+        android:layout_below="@id/login_text"
+        android:layout_marginTop="25dp" />
+
+    <EditText
+        android:id="@+id/til_edit_text"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_below="@id/email_text"
+        android:layout_marginStart="13dp"
+        android:layout_marginTop="13dp"
+        android:layout_marginEnd="13dp"
+        android:layout_marginBottom="13dp"
+        android:inputType="textEmailAddress"
+        android:background="@drawable/et_background"
+        android:hint="@string/enter_email_address"
+        android:isScrollContainer="true"
+        android:paddingStart="20dp"
+        android:paddingEnd="15dp"
+        android:singleLine="true" />
+
+
+    <TextView
+        android:id="@+id/password_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/password"
+        android:textSize="13sp"
+        android:layout_marginStart="17dp"
+        android:layout_below="@id/til_edit_text"
+        android:layout_marginTop="20dp" />
+
+
+    <EditText
+        android:id="@+id/til_password"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_below="@id/password_text"
+        android:layout_marginStart="13dp"
+        android:layout_marginTop="13dp"
+        android:layout_marginEnd="13dp"
+        android:layout_marginBottom="13dp"
+        android:inputType="textPassword"
+        android:maxLines="1"
+        android:background="@drawable/et_background"
+        android:hint="@string/enter_password"
+        android:isScrollContainer="true"
+        android:paddingStart="20dp"
+        android:paddingEnd="15dp"
+        android:singleLine="true" />
+
+    <TextView
+        android:id="@+id/tv_forgot"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/forgot_password"
+        android:layout_below="@id/til_password"
+        android:layout_marginTop="7dp"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="15dp"/>
+
+    <Button
+        android:id="@+id/login_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/login"
+        android:textColor="@color/white"
+        android:backgroundTint="@color/btn_color"
+        android:layout_below="@id/tv_forgot"
+        android:layout_marginTop="24dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        />
+
+    <TextView
+        android:id="@+id/tv_register"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Register User"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        android:layout_below="@id/login_btn"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="20dp"/>
+
+
+
+
+
+</RelativeLayout>
