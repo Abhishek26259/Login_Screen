@@ -19,7 +19,6 @@ class MainActivity : AppCompatActivity() {
     private lateinit var userDao: UserDao
     private lateinit var sharedPrefs: SharedPreferences
 
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
@@ -49,7 +48,7 @@ class MainActivity : AppCompatActivity() {
                 val user = userDao.getUserByEmail(email)
                 withContext(Dispatchers.Main) {
                     if (user != null && user.password == password) {
-                        saveLoginStatus(true)
+                        saveLoginStatus(user)
                         Toast.makeText(this@MainActivity, "Login successful", Toast.LENGTH_SHORT).show()
                         navigateToNextScreen()
                     } else {
@@ -80,12 +79,20 @@ class MainActivity : AppCompatActivity() {
     private fun isLoggedIn(): Boolean {
         return sharedPrefs.getBoolean("isLoggedIn", false)
     }
-
-    private fun saveLoginStatus(isLoggedIn: Boolean) {
+    private fun saveLoginStatus(user: User){
         val editor = sharedPrefs.edit()
-        editor.putBoolean("isLoggedIn", isLoggedIn)
+        editor.putLong("userId", user.id)
         editor.apply()
     }
+
+//    private fun saveLoginStatus(isLoggedIn: Boolean) {
+//        val editor = sharedPrefs.edit()
+//        editor.putBoolean("isLoggedIn", isLoggedIn)
+//        editor.apply()
+//    }
+
+
+
 
 }
 

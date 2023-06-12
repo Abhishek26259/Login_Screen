@@ -25,11 +25,12 @@ class RegisterActivity : AppCompatActivity() {
 
         val registerButton = binding.registerButton
         registerButton.setOnClickListener {
+            val name = getNameFromInput()
             val email = getEmailFromInput()
             val password = getPasswordFromInput()
 
-            if (email.isNotEmpty() && password.isNotEmpty()) {
-                val user = User(email = email, password = password)
+            if (name.isNotEmpty() && email.isNotEmpty() && password.isNotEmpty()) {
+                val user = User(name = name, email = email, password = password)
                 registerUser(user)
             } else {
                 Toast.makeText(this, "Please enter email and password", Toast.LENGTH_SHORT).show()
@@ -48,6 +49,10 @@ class RegisterActivity : AppCompatActivity() {
         }
     }
 
+    private fun getNameFromInput(): String {
+        val nameEditText = binding.nameEditText
+        return nameEditText.text.toString().trim()
+    }
     private fun getEmailFromInput(): String {
         val emailEditText = binding.emailEditText
         return emailEditText.text.toString().trim()
